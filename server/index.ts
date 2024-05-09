@@ -43,8 +43,12 @@ async function showSelection(player: alt.Player, attempts = 0) {
         CollectionNames.Characters,
     );
 
-    const webview = Rebar.player.useWebview(player);
+    if (CharacterSelectConfig.maxCharacters == 1 && characters.length == 1) {
+        handleSpawnCharacter(player, characters[0]._id);
+        return;
+    }
 
+    const webview = Rebar.player.useWebview(player);
     webview.show('CharacterSelect', 'page');
     const result = await webview.isReady('CharacterSelect', 'page');
     if (!result) {
