@@ -204,6 +204,7 @@ async function handleLogin(player: alt.Player) {
     player.spawn(SpawnPos);
     player.pos = SpawnPos;
     player.frozen = true;
+    player.visible = false;
     await alt.Utils.wait(500);
 
     player.dimension = player.id + 1;
