@@ -156,6 +156,13 @@ async function handleSpawnCharacter(player: alt.Player, id: string) {
     player.emit(CharacterSelectEvents.toClient.toggleControls, true);
     player.dimension = 0;
 
+    if (character.appearance) {
+        player.visible = true;
+        Rebar.player.usePlayerAppearance(player).update();
+    }
+
+    Rebar.player.useClothing(player).update();
+
     // Emit bound character event here
     player.frozen = false;
     player.deleteMeta(sessionKey);
