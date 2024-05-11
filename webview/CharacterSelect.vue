@@ -30,6 +30,7 @@ const selectedCharacterIndex = ref(0);
 const timeout = ref<undefined | NodeJS.Timeout>(undefined);
 
 function handlePopulateCharacters(_characters: Character[]) {
+    selectedCharacterIndex.value = 0;
     characters.value = _characters;
     isReady.value = true;
     isSelectingUsername.value = false;
