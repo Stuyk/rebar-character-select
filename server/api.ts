@@ -2,10 +2,12 @@ import * as alt from 'alt-server';
 import { useRebar } from '@Server/index.js';
 import { Character } from '@Shared/types/character.js';
 
+type PlayerCharacterCallback = (player: alt.Player, character: Character) => void;
+
 const API_NAME = 'character-select-api';
 const Rebar = useRebar();
 
-const selectCallbacks: Array<(player: alt.Player, character: Character) => void> = [];
+const selectCallbacks: Array<PlayerCharacterCallback> = [];
 
 export function invokeSelect(player: alt.Player, character: Character) {
     for (let cb of selectCallbacks) {
@@ -14,7 +16,7 @@ export function invokeSelect(player: alt.Player, character: Character) {
 }
 
 function useApi() {
-    function onSelect(callback: (player: alt.Player) => void) {
+    function onSelect(callback: PlayerCharacterCallback) {
         selectCallbacks.push(callback);
     }
 
