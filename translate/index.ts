@@ -23,4 +23,26 @@ setBulk({
         'character.select.last': 'Last Name',
         'character.select.max.characters.reached': 'Max characters reached',
     },
+    hu: {
+        "character.select.no.account": "Nem található fiók, indítsd újra a játékot",
+        "character.select.bad.write": "Frissítés sikertelen, csatlakozz újra a szerverre",
+        "character.select.bad.character": "A karakter nem létezik, csatlakozz újra a szerverre",
+        "character.select.first.invalid": "Az keresztnév érvénytelen",
+        "character.select.last.invalid": "A vezetéknév érvénytelen",
+        "character.select.invalid.characters": "A név érvénytelen karaktereket tartalmaz",
+        "character.select.username.taken": "A név már foglalt",
+        "character.select.character.not.found": "A karakter nem található, frissítsd a karaktereket",
+        "character.select.submit": "Küldés",
+        "character.select.cancel": "Mégse",
+        "character.select.confirm": "Megerősítés",
+        "character.select.delete": "Törlés",
+        "character.select.spawn": "Kiválasztás",
+        "character.select.create": "Karakter Létrehozása",
+        "character.select.no.appearance": "Nincs megjelenés",
+        "character.select.confirm.delete": "Biztosan törölni szeretnéd",
+        "character.select.first": "Keresztnév",
+        "character.select.last": "Vezetéknév",
+        "character.select.max.characters.reached": "Elérted a maximális karakterek számát"
+    }
+    
 });
