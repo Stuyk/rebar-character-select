@@ -158,10 +158,10 @@ async function handleSpawnCharacter(player: alt.Player, id: string) {
 
     if (character.appearance) {
         player.visible = true;
-        Rebar.player.usePlayerAppearance(player).update();
+        Rebar.player.usePlayerAppearance(player).sync();
     }
 
-    Rebar.player.useClothing(player).update();
+    Rebar.player.useClothing(player).sync();
 
     // Emit bound character event here
     player.frozen = false;
@@ -192,18 +192,14 @@ async function handleSyncCharacter(player: alt.Player, id: string) {
         return;
     }
 
-    const binder = Rebar.document.character.useCharacterBinder(player);
-    binder.unbind();
-    binder.bind(character);
-
     if (character.appearance) {
         player.visible = true;
-        Rebar.player.usePlayerAppearance(player).update();
+        Rebar.player.usePlayerAppearance(player).apply(character.appearance);
     } else {
         player.visible = false;
     }
 
-    Rebar.player.useClothing(player).update();
+    Rebar.player.useClothing(player).apply(character);
 }
 
 async function handleLogin(player: alt.Player) {
